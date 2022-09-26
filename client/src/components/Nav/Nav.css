@@ -1,0 +1,28 @@
+.n-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    background: rgba(207, 162, 27, 0.73);
+}
+    
+.n-color{
+    color: white;
+}
+
+.n-h2{
+    margin-left: 10px;
+}
+
+.n-h4-R{
+    margin-right: 10px;
+}
+
+.n-h4-L {
+    margin-right: -700px;
+}
+

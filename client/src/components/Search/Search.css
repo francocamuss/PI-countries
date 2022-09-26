@@ -1,0 +1,14 @@
+.s-color{
+    color: white;
+    font-family: sans-serif;
+}
+
+.s-div{
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    background: rgba(207, 162, 27, 0.73);
+    margin: 10px;
+    padding: 20px;
+    width: 15%;
+}

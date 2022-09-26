@@ -1,0 +1,5 @@
+.Cards-div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+}

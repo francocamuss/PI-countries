@@ -1,0 +1,16 @@
+.cd-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 220px;
+    margin-right: 220px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 200px;
+    padding-right: 200px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: white;
+    background: rgba(207, 162, 27, 0.73);
+    color: white;
+}
