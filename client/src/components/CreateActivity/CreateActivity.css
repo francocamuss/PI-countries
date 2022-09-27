@@ -1,8 +1,7 @@
 .ca-form{
     display: flex;
     flex-direction: row;
-    padding-left: 432px;
-    padding-right: 432px;
+    justify-content: center;
 }
 
 .ca-div{
@@ -22,4 +21,26 @@ label {
     color: white;
     font-family: sans-serif;
     font-size: 20px;
+}
+
+.ca-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.ca-row {
+    display: flex;
+    justify-content: row;
+}
+
+.ca-bt-delete{
+    color: white;
+    background-color: red;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-color: white;
+}
+
+.ca-p-delete{
+    margin-top: -1px;
 }

@@ -24,7 +24,10 @@ const Home = function(){
 
     useEffect(()=>{
         dispatch(actions.getAllCountries())
-        //dispatch(actions.getByActivities())
+    }, [])
+
+    useEffect(()=>{
+        dispatch(actions.getByActivities())
     }, [])
 
     return(

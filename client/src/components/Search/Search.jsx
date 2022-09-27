@@ -52,7 +52,7 @@ const Search = function({setCurrentPage, setRender}){
     }
 
     return(
-        <div className='s-color s-div'>
+        <div className='s-color s-div s-column'>
             <label>Search Country By Name: </label>
             <input
                 type="text"
@@ -64,7 +64,7 @@ const Search = function({setCurrentPage, setRender}){
             <button type="button" onClick={searchCoutry}>Search country</button>
             <button type="button" onClick={filterActivites}>Search activity</button>
             <button onClick={restartCountries}>Restart countries</button>
-            <div>
+            <div className='s-column s-order'>
                 <label>Order countries by name: </label>
                 <select onClick={orderName}>
                     <option value="asc">Ascendancy</option>

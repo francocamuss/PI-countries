@@ -9,10 +9,12 @@ const CountryDetail = function(props){
     const countryDetail = useSelector(state => state.countryDetail);
     const countryID = props.match.params.id;
     const dispatch = useDispatch();
-    useEffect(()=>{
+
+    /*useEffect(()=>{
         dispatch(actions.getByActivities())
-    },[])
-    useEffect(()=> dispatch(actions.getCountryID(countryID)));
+    }, [])*/
+    
+    useEffect(()=> dispatch(actions.getCountryID(countryID)), []);
 
     return(
         <div className="cd-div">
