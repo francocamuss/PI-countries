@@ -24,11 +24,11 @@ const Home = function(){
 
     useEffect(()=>{
         dispatch(actions.getAllCountries())
-    }, [])
+    }, [dispatch])
 
     useEffect(()=>{
         dispatch(actions.getByActivities())
-    }, [])
+    }, [dispatch])
 
     return(
         <div>

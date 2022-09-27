@@ -61,22 +61,22 @@ const Search = function({setCurrentPage, setRender}){
                 value={country}
                 onChange={handleChange}
             />
-            <button type="button" onClick={searchCoutry}>Search country</button>
-            <button type="button" onClick={filterActivites}>Search activity</button>
-            <button onClick={restartCountries}>Restart countries</button>
+            <button className='s-bt' type="button" onClick={searchCoutry}>Search country</button>
+            <button className='s-bt' type="button" onClick={filterActivites}>Search activity</button>
+            <button className='s-bt' onClick={restartCountries}>Restart countries</button>
             <div className='s-column s-order'>
-                <label>Order countries by name: </label>
-                <select onClick={orderName}>
+                <label className='s-label'>Order countries by name: </label>
+                <select className='s-bt' onClick={orderName}>
                     <option value="asc">Ascendancy</option>
                     <option value="des">Descendant</option>
                 </select>
-                <label>Order countries by population: </label>
-                <select onClick={orderPopulation}>
+                <label className='s-label'>Order countries by population: </label>
+                <select className='s-bt' onClick={orderPopulation}>
                     <option value="asc">Ascendancy</option>
                     <option value="des">Descendant</option>
                 </select>
-                <label>Filter countries by continent: </label>
-                <select onClick={orderContinent}>
+                <label className='s-label'>Filter countries by continent: </label>
+                <select className='s-bt' onClick={orderContinent}>
                     <option value="North America">North America</option>
                     <option value="Europe">Europe</option>
                     <option value="Africa">Africa</option>

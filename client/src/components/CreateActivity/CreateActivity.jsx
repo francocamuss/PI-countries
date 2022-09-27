@@ -51,6 +51,7 @@ const CreateActivity = function(){
             ...state,
             [e.target.name]: e.target.value
         }))
+        console.log(state)
     }   
 
     const handleCheck = (e) => {
@@ -61,6 +62,7 @@ const CreateActivity = function(){
                 season: e.target.value
             })
         }
+        console.log(state)
     }
 
     const handleSelect = (e) => {
@@ -73,6 +75,7 @@ const CreateActivity = function(){
             ...state,
             [e.target.name]: e.target.value
         }))
+        console.log(state)
     }
 
     const handleDelete = (e) => {   
@@ -93,15 +96,15 @@ const CreateActivity = function(){
     return(
         <form onSubmit={(e) => createActivity(e)} className="ca-form" >
             <div className="ca-div">
-                <h2>Create activity: </h2>
+                <h2 className="ca-h2">Create activity: </h2>
                 <label>Name: </label>
-                <input name="name" type="text" value={state.name} onChange={handleChange} />
+                <input className="ca-input" name="name" type="text" value={state.name} onChange={handleChange} />
                 {errors.name && (<p>{errors.name}</p>)}
                 <label>Difficulty: </label>
-                <input name="difficulty" type="number" value={state.difficulty} onChange={handleChange} />
+                <input className="ca-input" name="difficulty" type="number" value={state.difficulty} onChange={handleChange} />
                 {errors.difficulty && (<p>{errors.difficulty}</p>)}
                 <label>Duration</label>
-                <input name="duration" type="number" value={state.duration} onChange={handleChange} />
+                <input className="ca-input" name="duration" type="number" value={state.duration} onChange={handleChange} />
                 {errors.duration && (<p>{errors.duration}</p>)}
                 <div className="ca-column">
                     <label>Season: </label>
@@ -134,17 +137,17 @@ const CreateActivity = function(){
                             onChange={handleCheck}
                         />Spring</label>
                 </div>
-                <select onChange={handleSelect}>
+                <select className="ca-input" onChange={handleSelect}>
                     {
                         countries && countries.map(c => {
-                            return <option value={c.id}>{c.name}</option>
+                            return <option key={c.id} value={c.id}>{c.name}</option>
                         })
                     }
                 </select>
                 <div className="ca-row">
                 {
                         state.countryID.map(el => {
-                            return <div >
+                            return <div key={el}>
                                 <button onClick={() => handleDelete(el)} className="ca-bt-delete">x</button>
                                 <p className="ca-p-delete">{el + ',  '}</p>
                             </div>
@@ -153,7 +156,7 @@ const CreateActivity = function(){
                 }
                 </div>
                 {errors.countryID && (<p>{errors.countryID}</p>)}
-                <button type="submit">Create activity</button>
+                <button className="ca-bt-submit" type="submit">Create activity</button>
             </div>
         </form>
     )   

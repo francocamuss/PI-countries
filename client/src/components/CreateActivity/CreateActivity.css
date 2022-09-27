@@ -4,6 +4,10 @@
     justify-content: center;
 }
 
+.ca-h2{
+    margin-top: -30px;
+}
+
 .ca-div{
     display: flex;
     flex-direction: column;
@@ -43,4 +47,20 @@ label {
 
 .ca-p-delete{
     margin-top: -1px;
+}
+
+.ca-bt-submit{
+    color: white;
+    background-color: black;
+    margin-top: 15px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: white;
+    padding: 10px;
+}
+
+.ca-input{
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
 }
