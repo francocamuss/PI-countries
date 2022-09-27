@@ -4,6 +4,32 @@ import { useDispatch, useSelector } from "react-redux";
 import * as actions from '../../redux/actions';
 import "./CreateActivity.css";
 
+const validate = (state) => {
+    const errors = {};
+    let dif = Number(state.difficulty);
+    let dur = Number(state.duration);
+    if (!state.name) {
+        errors.name = "Se requiere un nombre";
+    }
+    if (!state.difficulty) {
+        errors.difficulty = "Campo necesario"
+        
+    } else if (dif < 1 || dif > 5) {
+        errors.difficulty = "Debe ser entre 1 y 5"
+    }
+    if (!state.duration) {
+        errors.duration = "Campo necesario";
+    } else if (dur < 0 || dur > 24) {
+        errors.duration = "Debe ser entre 1 y 24"
+    }
+    if (!state.season) {
+        errors.season = "Debes seleccionar una temporada"
+    }
+    if (!state.countryID || state.countryID.length < 1) {
+        errors.countryID = "Campo necesario"
+    }
+    return errors;
+}
 
 
 const CreateActivity = function(){
@@ -20,26 +46,6 @@ const CreateActivity = function(){
 
     const [state, setState] = useState(initialState);
     const [errors, setErrors] = useState({})
-
-    const validate = (state) => {
-        const errors = {};
-        if (!state.name) {
-            errors.name = "Se requiere un nombre";
-        }
-        if (state.difficulty > 5 || state.difficulty < 1) {
-            errors.difficulty = "La dificultad tiene que ser un entero entre 1 y 5"
-        }
-        if (state.duration < 0 || state.duration > 10) {
-            errors.duration = "La duracion es invalida";
-        }
-        if (state.season) {
-            
-        }
-        if (state.countryID.length === 0) {
-            errors.countryID = "Debes seleccionar al menos un elemento"
-        }
-        return errors;
-    }
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -62,6 +68,10 @@ const CreateActivity = function(){
                 season: e.target.value
             })
         }
+        setErrors(validate({
+            ...state,
+            season: e.target.value
+        }))
         console.log(state)
     }
 
@@ -73,7 +83,7 @@ const CreateActivity = function(){
         })
         setErrors(validate({
             ...state,
-            [e.target.name]: e.target.value
+            countryID: e.target.value
         }))
         console.log(state)
     }
@@ -87,6 +97,9 @@ const CreateActivity = function(){
 
     const createActivity = (e) => {
         e.preventDefault();
+        if (!state.name || !state.difficulty || !state.duration || !state.season || !state.countryID) {
+            return alert('Complete correctamente el formulario antes de enviarlo')
+        }
         dispatch(actions.postActivity(state));
         alert("Actividad creada con exito!")
         setState(initialState);
@@ -137,6 +150,7 @@ const CreateActivity = function(){
                             onChange={handleCheck}
                         />Spring</label>
                 </div>
+                {errors.season && (<p>{errors.season}</p>)}
                 <select className="ca-input" onChange={handleSelect}>
                     {
                         countries && countries.map(c => {

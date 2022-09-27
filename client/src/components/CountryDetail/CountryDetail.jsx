@@ -24,7 +24,7 @@ const CountryDetail = function(props){
             <h3>Continent: {countryDetail.continent}</h3>
             <h3>Capital: {countryDetail.capital}</h3>
             <h3>Subregion: {countryDetail.subregion}</h3>
-            <h3>Area: {countryDetail.area}</h3>
+            <h3>Area: {countryDetail.area} km2</h3>
             <h3>Population: {countryDetail.population}</h3>
             <h3>Activities: </h3>
             <div>
