@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const getAllCountries = () => async dispatch => {
-    const countries = await axios.get("http://localhost:3001/countries")
+export const getAllCountries = () => dispatch => {
+    const countries = axios.get("http://localhost:3001/countries")
     .then(response => response.data)
     .then(countries => {
         dispatch({type: "GET_ALL_COUNTRIES", countries})
@@ -9,8 +9,8 @@ export const getAllCountries = () => async dispatch => {
     return countries;
 }
 
-export const getCountryName = (name) => async dispatch => {
-    const countries = await axios.get(`http://localhost:3001/countries?name=${name}`)
+export const getCountryName = (name) => dispatch => {
+    const countries = axios.get(`http://localhost:3001/countries?name=${name}`)
     .then(response => response.data)
     .then(countries => {
         dispatch({type: "GET_COUNTRY_NAME", countries})
@@ -18,8 +18,8 @@ export const getCountryName = (name) => async dispatch => {
     return countries;
 }
 
-export const getCountryID = (id) => async dispatch => {
-    const countries = await axios.get(`http://localhost:3001/countries/${id}`)
+export const getCountryID = (id) => dispatch => {
+    const countries = axios.get(`http://localhost:3001/countries/${id}`)
     .then(response => response.data)
     .then(countries => {
         dispatch({type: "GET_COUNTRY_ID", countries})
@@ -32,8 +32,8 @@ export const postActivity = (payload) => async dispatch => {
     return activity;
 }
 
-export const getByActivities = () => async dispatch => {
-    const activities = await axios.get(`http://localhost:3001/activities`)
+export const getByActivities = () => dispatch => {
+    const activities = axios.get(`http://localhost:3001/activities`)
     .then(response => response.data)
     .then(activities => {
         dispatch({type: "GET_COUNTRY_ACTIVITY", activities})
