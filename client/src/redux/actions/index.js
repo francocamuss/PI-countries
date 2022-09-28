@@ -43,7 +43,7 @@ export const getByActivities = () => dispatch => {
 
 export const filterContinent = (payload) => {
     return{
-        type: "FILTER_CONTINENT",
+        type: "FILTER_CONTINENT",   
         payload
     }
 }
