@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux'
 import * as actions from '../../redux/actions';
 import "./Search.css";
 
-const Search = function({setCurrentPage, setRender}){
+const Search = function({setCurrentPage, setRender, activities}){
 
     const [country, setCountry] = useState("")
     const dispatch = useDispatch()
@@ -47,8 +47,9 @@ const Search = function({setCurrentPage, setRender}){
 
     const filterActivites = (e) => {
         e.preventDefault();
-        dispatch(actions.filterActivities(country))
-        setCountry("");
+        dispatch(actions.filterActivities(e.target.value))
+        setCurrentPage(1);
+        setRender(`Ordenando ${e.target.value}`);
     }
 
     return(
@@ -62,9 +63,14 @@ const Search = function({setCurrentPage, setRender}){
                 onChange={handleChange}
             />
             <button className='s-bt' type="button" onClick={searchCoutry}>Search country</button>
-            <button className='s-bt' type="button" onClick={filterActivites}>Search activity</button>
             <button className='s-bt' onClick={restartCountries}>Restart countries</button>
             <div className='s-column s-order'>
+                <label className='s-label'>Filter by activities: </label>
+                <select className='s-bt' onClick={filterActivites}>
+                    {activities && activities.map(el => {
+                        return <option value={el.name}>{el.name}</option>
+                    })}
+                </select>
                 <label className='s-label'>Order countries by name: </label>
                 <select className='s-bt' onClick={orderName}>
                     <option value="asc">Ascendancy</option>

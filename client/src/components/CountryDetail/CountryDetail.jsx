@@ -10,14 +10,20 @@ const CountryDetail = function(props){
     const countryID = props.match.params.id;
     const dispatch = useDispatch();
 
+    
+
     /*useEffect(()=>{
         dispatch(actions.getByActivities())
     }, [])*/
     
-    useEffect(()=> dispatch(actions.getCountryID(countryID)), [dispatch]);
+    useEffect(() => {
+        dispatch(actions.setDetailNull())
+        dispatch(actions.getCountryID(countryID))
+    }, [dispatch]);
 
     return(
         <div className="cd-div">
+            {countryDetail.name? <div>
             <h2>{countryDetail.name}</h2>
             <img src={countryDetail.image} alt="flag country"/>
             <h3>id: {countryDetail.id}</h3>
@@ -32,11 +38,13 @@ const CountryDetail = function(props){
                 countryDetail.activities && countryDetail.activities.map(a => {
                     return <h3>Name: {a.name}, Difficulty: {a.difficulty}, Duration: {a.duration}, Season: {a.season}</h3>
                 })
-            }
+                    }
             </div>
+            </div> : <p>Cargando</p>} 
         </div>
     )
 }
 
 export default CountryDetail;
 //<h3>activities: {countryDetail.activities}</h3>
+

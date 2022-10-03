@@ -11,6 +11,7 @@ import "./Home.css";
 const Home = function(){
     const dispatch = useDispatch()
     const allCountries = useSelector(state => state.allCountries)
+    const activities = useSelector(state => state.activities)
     const [render, setRender] = useState("");
     const [currentPage, setCurrentPage] = useState(1)
     const [countriesPerPage, setCountriesPerPage] = useState(10)
@@ -33,7 +34,7 @@ const Home = function(){
     return(
         <div>
             <div className="row">
-                <Search setCurrentPage={setCurrentPage} setRender={setRender} />
+                <Search setCurrentPage={setCurrentPage} setRender={setRender} activities={activities} />
                 <Cards currentCountries={currentCountries} />
             </div>
             <Paginated allCountries={allCountries.length} countriesPerPage={countriesPerPage} paginated={paginated}/>
