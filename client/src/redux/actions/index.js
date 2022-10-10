@@ -76,10 +76,4 @@ export const deleteCountry = (id) => {
     }
 }
 
-export const setDetailNull = () => {
-    return {
-        type: "SET_NULL"
-    }
-}
-
 

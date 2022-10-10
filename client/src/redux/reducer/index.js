@@ -122,11 +122,6 @@ const rootReducer = function(state = initialState, action){
                 ...state,
                 allCountries: state.countries.filter(e => e.id !== action.payload)
             }
-        case "SET_NULL":
-            return {
-                ...state,
-                countryDetail: {}
-            }
         default:
             return {...state};
     }
