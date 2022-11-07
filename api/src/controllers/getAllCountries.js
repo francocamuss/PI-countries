@@ -58,7 +58,10 @@ const getAllCountry = async (req, res) => {
             },
             include: [{ model: Activity }]
         })
-        return res.status(200).json(countryFilter? countryFilter : "No se encontro un pais con ese nombre")
+        if (countryFilter.length === 0) {
+            return res.status(400).send({message: "No se encontro un pais con ese nombre"})
+        }
+        return res.status(200).json(countryFilter)
 
     } catch (error) {
         res.status(404).send(error.msg)

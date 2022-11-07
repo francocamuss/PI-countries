@@ -9,13 +9,14 @@ export const getAllCountries = () => dispatch => {
     return countries;
 }
 
-export const getCountryName = (name) => dispatch => {
-    const countries = axios.get(`http://localhost:3001/countries?name=${name}`)
-    .then(response => response.data)
-    .then(countries => {
-        dispatch({type: "GET_COUNTRY_NAME", countries})
-    })
+export const getCountryName = (name) => async dispatch => {
+    try {
+        const countries = await axios.get(`http://localhost:3001/countries?name=${name}`)
+        dispatch({type: "GET_COUNTRY_NAME", countries: countries.data})
     return countries;
+    } catch (error) {
+        alert(error.response.data.message)
+    }
 }
 
 export const getCountryID = (id) => dispatch => {
@@ -73,6 +74,12 @@ export const deleteCountry = (id) => {
     return{
         type: "DELETE_COUNTRY",
         payload: id
+    }
+}
+
+export const setDetailNull = () => {
+    return{
+        type: "DETAIL_NULL"
     }
 }
 

@@ -16,7 +16,8 @@ const Home = function(){
     const [countriesPerPage, setCountriesPerPage] = useState(10)
     const indexOfLastCountry = currentPage * countriesPerPage
     const indexOfFirstCountry = indexOfLastCountry - countriesPerPage
-    const currentCountries = allCountries.slice(indexOfFirstCountry,indexOfLastCountry)
+    const currentCountries = allCountries.slice(indexOfFirstCountry, indexOfLastCountry)
+    const allActivities = useSelector(state => state.activities)
 
     const paginated = (pageNumber) => {
         setCurrentPage(pageNumber)
@@ -33,7 +34,7 @@ const Home = function(){
     return(
         <div>
             <div className="row">
-                <Search setCurrentPage={setCurrentPage} setRender={setRender} />
+                <Search setCurrentPage={setCurrentPage} setRender={setRender} allActivities={allActivities} />
                 <Cards currentCountries={currentCountries} />
             </div>
             <Paginated allCountries={allCountries.length} countriesPerPage={countriesPerPage} paginated={paginated}/>

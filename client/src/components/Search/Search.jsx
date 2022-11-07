@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux'
 import * as actions from '../../redux/actions';
 import "./Search.css";
 
-const Search = function({setCurrentPage, setRender}){
+const Search = function({setCurrentPage, setRender, allActivities}){
 
     const [country, setCountry] = useState("")
     const dispatch = useDispatch()
@@ -47,7 +47,7 @@ const Search = function({setCurrentPage, setRender}){
 
     const filterActivites = (e) => {
         e.preventDefault();
-        dispatch(actions.filterActivities(country))
+        dispatch(actions.filterActivities(e.target.value))
         setCountry("");
     }
 
@@ -62,9 +62,14 @@ const Search = function({setCurrentPage, setRender}){
                 onChange={handleChange}
             />
             <button className='s-bt' type="button" onClick={searchCoutry}>Search country</button>
-            <button className='s-bt' type="button" onClick={filterActivites}>Search activity</button>
             <button className='s-bt' onClick={restartCountries}>Restart countries</button>
             <div className='s-column s-order'>
+                <label className='s-label'>Search activity: </label>
+                <select className='s-bt' onClick={filterActivites}>
+                    {allActivities && allActivities.map(e => {
+                        return <option value={e.name} key={e.id}>{e.name}</option>
+                    })}
+                </select>
                 <label className='s-label'>Order countries by name: </label>
                 <select className='s-bt' onClick={orderName}>
                     <option value="asc">Ascendancy</option>
