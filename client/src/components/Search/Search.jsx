@@ -60,6 +60,7 @@ const Search = function({setCurrentPage, setRender, allActivities}){
                 placeholder='Search country'
                 value={country}
                 onChange={handleChange}
+                className="s-input"
             />
             <button className='s-bt' type="button" onClick={searchCoutry}>Search country</button>
             <button className='s-bt' onClick={restartCountries}>Restart countries</button>

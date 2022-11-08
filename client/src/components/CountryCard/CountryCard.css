@@ -3,13 +3,13 @@
     border-color: white;
     border-radius: 10px;
     background: rgba(207, 162, 27, 0.73);
-    margin: 5px;
     width: 18%;
+    margin-bottom: 5px;
 }
 
 .cc-img{
     border-radius: 10px;
-    width: 190px;
+    width: 90%;
     height: 120px;
 }
 

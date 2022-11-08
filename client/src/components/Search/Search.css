@@ -8,10 +8,8 @@
     border-color: white;
     border-radius: 10px;
     background: rgba(207, 162, 27, 0.73);
-    margin: 10px;
-    padding: 20px;
-    width: 15%;
-    margin-bottom: 5px;
+    width: 20%;
+    margin-left: 10px;
 }
 
 .s-column{
@@ -25,6 +23,11 @@
     margin-bottom: 10px;
 }
 
+.s-input{
+    width: 80%;
+    margin-left: 10%;
+}
+
 .s-bt{
     color: white;
     background-color: black;
@@ -32,6 +35,9 @@
     border-radius: 10px;
     border-color: white;
     padding: 5px;
+    cursor: pointer;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .s-label{

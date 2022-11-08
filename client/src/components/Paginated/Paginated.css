@@ -3,9 +3,12 @@ ul {
     flex-direction: row;
     list-style: none;
     align-items: center;
+    margin-left: -35px;
+    margin-right: 10px;
 }
 
 li {
+    width: 25px;
     padding: 10px;
     margin: 5px;
     border: solid;
@@ -14,4 +17,9 @@ li {
     background-color: rgba(207, 162, 27, 0.73);
     color: white;
     font-family: sans-serif;
+    
+}
+
+li:hover{
+    cursor: pointer;
 }

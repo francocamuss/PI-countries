@@ -18,11 +18,18 @@
     margin-left: 10px;
 }
 
+.div-navLinks{
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    justify-content: space-around;
+}
+/*
 .n-h4-R{
     margin-right: 10px;
 }
 
 .n-h4-L {
     margin-right: -700px;
-}
+} */
 
