@@ -10,12 +10,13 @@
     background: rgba(207, 162, 27, 0.73);
     width: 20%;
     margin-left: 10px;
+    height: 510px;
 }
 
 .s-column{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .s-order{
@@ -24,8 +25,11 @@
 }
 
 .s-input{
-    width: 80%;
+    width: 77%;
     margin-left: 10%;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .s-bt{

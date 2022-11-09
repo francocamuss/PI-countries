@@ -112,13 +112,13 @@ const CreateActivity = function(){
                 <h2 className="ca-h2">Create activity: </h2>
                 <label>Name: </label>
                 <input className="ca-input" name="name" type="text" value={state.name} onChange={handleChange} />
-                {errors.name && (<p>{errors.name}</p>)}
+                {errors.name && (<p className="errors">{errors.name}</p>)}
                 <label>Difficulty: </label>
                 <input className="ca-input" name="difficulty" type="number" value={state.difficulty} onChange={handleChange} />
-                {errors.difficulty && (<p>{errors.difficulty}</p>)}
+                {errors.difficulty && (<p className="errors">{errors.difficulty}</p>)}
                 <label>Duration</label>
                 <input className="ca-input" name="duration" type="number" value={state.duration} onChange={handleChange} />
-                {errors.duration && (<p>{errors.duration}</p>)}
+                {errors.duration && (<p className="errors">{errors.duration}</p>)}
                 <div className="ca-column">
                     <label>Season: </label>
                     <label>
@@ -150,7 +150,7 @@ const CreateActivity = function(){
                             onChange={handleCheck}
                         />Spring</label>
                 </div>
-                {errors.season && (<p>{errors.season}</p>)}
+                {errors.season && (<p className="errors">{errors.season}</p>)}
                 <select className="ca-input" onChange={handleSelect}>
                     {
                         countries && countries.map(c => {
@@ -169,7 +169,7 @@ const CreateActivity = function(){
                         
                 }
                 </div>
-                {errors.countryID && (<p>{errors.countryID}</p>)}
+                {errors.countryID && (<p className="errors">{errors.countryID}</p>)}
                 <button className="ca-bt-submit" type="submit">Create activity</button>
             </div>
         </form>

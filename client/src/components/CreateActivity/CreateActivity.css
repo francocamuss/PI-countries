@@ -57,10 +57,17 @@ label {
     border-style: solid;
     border-color: white;
     padding: 10px;
+    cursor: pointer;
 }
 
 .ca-input{
     border-style: solid;
     border-color: black;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.errors{
+    color: red;
+    text-shadow: 0px 0px 1px black;
 }

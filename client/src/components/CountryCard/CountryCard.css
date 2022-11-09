@@ -3,8 +3,10 @@
     border-color: white;
     border-radius: 10px;
     background: rgba(207, 162, 27, 0.73);
-    width: 18%;
+    width: 200px;
     margin-bottom: 5px;
+    height: 250px;
+    margin-right: 5px;
 }
 
 .cc-img{
@@ -15,4 +17,8 @@
 
 .cc-color{
     color: white;
+}
+
+.cc-h2{
+    height: 15%;
 }
