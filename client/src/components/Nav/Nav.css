@@ -14,8 +14,14 @@
     color: white;
 }
 
+
+.n-color:hover{
+    color: black;
+}
+
 .n-h2{
     margin-left: 10px;
+    color: white;
 }
 
 .div-navLinks{
