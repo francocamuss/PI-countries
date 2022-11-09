@@ -9,6 +9,10 @@
     margin-right: 5px;
 }
 
+.cc-div:hover{ 
+    border-color: white;
+    background: rgba(6, 6, 5, 0.73);
+}
 .cc-img{
     border-radius: 10px;
     width: 90%;
@@ -18,6 +22,7 @@
 .cc-color{
     color: white;
 }
+
 
 .cc-h2{
     height: 15%;
