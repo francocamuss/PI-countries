@@ -60,6 +60,12 @@ label {
     cursor: pointer;
 }
 
+.ca-bt-submit:hover{
+    color: black;
+    background-color: whitesmoke;
+    border-color: black;
+}
+
 .ca-input{
     border-style: solid;
     border-color: black;

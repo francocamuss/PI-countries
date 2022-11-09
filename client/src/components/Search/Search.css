@@ -30,6 +30,8 @@
     border-radius: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-color: black;
+    color: black;
 }
 
 .s-bt{
@@ -42,6 +44,12 @@
     cursor: pointer;
     width: 80%;
     margin-left: 10%;
+}
+
+.s-bt:hover{
+    color: black;
+    background-color: whitesmoke;
+    border-color: black;
 }
 
 .s-label{
