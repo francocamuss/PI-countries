@@ -1,7 +1,9 @@
 import axios from 'axios';
+const backDeploy = "https://pi-countries-production-5bd1.up.railway.app/";
+const localBack = "http://localhost:3001/"
 
 export const getAllCountries = () => dispatch => {
-    const countries = axios.get("http://localhost:3001/countries")
+    const countries = axios.get(`${backDeploy}countries`)
     .then(response => response.data)
     .then(countries => {
         dispatch({type: "GET_ALL_COUNTRIES", countries})
@@ -11,7 +13,7 @@ export const getAllCountries = () => dispatch => {
 
 export const getCountryName = (name) => async dispatch => {
     try {
-        const countries = await axios.get(`http://localhost:3001/countries?name=${name}`)
+        const countries = await axios.get(`${backDeploy}countries?name=${name}`)
         dispatch({type: "GET_COUNTRY_NAME", countries: countries.data})
     return countries;
     } catch (error) {
@@ -20,7 +22,7 @@ export const getCountryName = (name) => async dispatch => {
 }
 
 export const getCountryID = (id) => dispatch => {
-    const countries = axios.get(`http://localhost:3001/countries/${id}`)
+    const countries = axios.get(`${backDeploy}countries/${id}`)
     .then(response => response.data)
     .then(countries => {
         dispatch({type: "GET_COUNTRY_ID", countries})
@@ -29,12 +31,12 @@ export const getCountryID = (id) => dispatch => {
 }
 
 export const postActivity = (payload) => async dispatch => {
-    const activity = await axios.post(`http://localhost:3001/activities`, payload);
+    const activity = await axios.post(`${backDeploy}activities`, payload);
     return activity;
 }
 
 export const getByActivities = () => dispatch => {
-    const activities = axios.get(`http://localhost:3001/activities`)
+    const activities = axios.get(`${backDeploy}activities`)
     .then(response => response.data)
     .then(activities => {
         dispatch({type: "GET_COUNTRY_ACTIVITY", activities})
