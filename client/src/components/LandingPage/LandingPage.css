@@ -29,3 +29,17 @@
     color: black;
     border-color: black;
 }
+
+@media screen and (max-width:800px) {
+    .lp-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 50px;
+    }
+    .lp-h1-p{
+        margin: 10px 10px;
+    }
+}

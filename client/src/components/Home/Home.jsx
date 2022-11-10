@@ -32,7 +32,7 @@ const Home = function(){
     }, [dispatch])
 
     return(
-        <div>
+        <div className="home-sc-p">
             <div className="row">
                 <Search setCurrentPage={setCurrentPage} setRender={setRender} allActivities={allActivities} />
                 <Cards currentCountries={currentCountries} />

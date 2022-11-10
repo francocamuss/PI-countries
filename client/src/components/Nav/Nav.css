@@ -30,12 +30,24 @@
     width: 20%;
     justify-content: space-around;
 }
-/*
-.n-h4-R{
-    margin-right: 10px;
-}
 
-.n-h4-L {
-    margin-right: -700px;
-} */
+@media screen and (max-width:800px) {
+    .n-div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .div-navLinks{
+        display: flex;
+        
+        
+    }
+    .n-h2{
+        font-size: 20px;
+        
+    }
+    .n-h4-L{
+        margin-right: 10px;
+    }
+}
 

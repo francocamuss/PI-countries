@@ -26,3 +26,12 @@ li:hover{
     background-color: black;
     color: white;
 }
+
+@media screen and (max-width:800px){
+    ul{
+        display: flex;
+        flex-direction: column;
+        width: 50px;
+    }
+    
+}
