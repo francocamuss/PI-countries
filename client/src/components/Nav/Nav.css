@@ -1,13 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700");
 .n-div{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
     border-style: solid;
-    border-color: white;
     border-radius: 10px;
     margin: 10px;
-    background: rgba(207, 162, 27, 0.73);
+    border-color: black;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 7px 29px 0px;
+    font-family: "Poppins";
 }
     
 .n-color{
@@ -16,7 +19,7 @@
 
 
 .n-color:hover{
-    color: black;
+    color: #DDAD43;
 }
 
 .n-h2{

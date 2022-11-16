@@ -14,9 +14,10 @@ const Paginated = function(props){
             <ul>
                 {
                     pageNumbers && pageNumbers.map(number => {
-                       return (<li key={number}>
-                        <a onClick={()=>props.paginated(number)}>{number}</a>
-                        </li>)
+                        return (<a onClick={() => props.paginated(number)}>
+                            <li key={number}>{number}</li>
+                        </a>
+                        )
                     })
                 }
             </ul>

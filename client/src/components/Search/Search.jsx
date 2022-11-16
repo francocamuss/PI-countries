@@ -71,17 +71,17 @@ const Search = function({setCurrentPage, setRender, allActivities}){
                         return <option value={e.name} key={e.id}>{e.name}</option>
                     })}
                 </select>
-                <label className='s-label'>Order countries by name: </label>
+                <label className='s-label'>Order by name: </label>
                 <select className='s-bt' onClick={orderName}>
                     <option value="asc">Ascendancy</option>
                     <option value="des">Descendant</option>
                 </select>
-                <label className='s-label'>Order countries by population: </label>
+                <label className='s-label'>Order by population: </label>
                 <select className='s-bt' onClick={orderPopulation}>
                     <option value="asc">Ascendancy</option>
                     <option value="des">Descendant</option>
                 </select>
-                <label className='s-label'>Filter countries by continent: </label>
+                <label className='s-label'>Filter by continent: </label>
                 <select className='s-bt' onClick={orderContinent}>
                     <option value="North America">North America</option>
                     <option value="Europe">Europe</option>

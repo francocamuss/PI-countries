@@ -20,25 +20,33 @@ const CountryDetail = function(props){
     }, [dispatch]);
 
     return(
-        <div className="cd-div">
-            {countryDetail.name? <div>
-            <h2>{countryDetail.name}</h2>
-            <img src={countryDetail.image} alt="flag country"/>
-            <h3>id: {countryDetail.id}</h3>
-            <h3>Continent: {countryDetail.continent}</h3>
-            <h3>Capital: {countryDetail.capital}</h3>
-            <h3>Subregion: {countryDetail.subregion}</h3>
-            <h3>Area: {countryDetail.area} km2</h3>
-            <h3>Population: {countryDetail.population}</h3>
-            <h3>Activities: </h3>
-            <div>
-            {
-                countryDetail.activities && countryDetail.activities.map(a => {
-                    return <h3>Name: {a.name}, Difficulty: {a.difficulty}, Duration: {a.duration}, Season: {a.season}</h3>
-                })
-            }
+        <div>
+            {countryDetail.name ? <div className="cd-div">
+            <div className="cd-row">
+                <div className="cd-div-nameflag">
+                    <h2>{countryDetail.name}</h2>
+                    <img src={countryDetail.image} alt="flag country"/>  
+                </div>
+                <div className="cd-div-caract">
+                    <h3>INFORMATION</h3>
+                    <h3>Continent: {countryDetail.continent}</h3>
+                    <h3>Capital: {countryDetail.capital}</h3>
+                    <h3>Subregion: {countryDetail.subregion}</h3>
+                    <h3>Area: {countryDetail.area} km2</h3>
+                    <h3>Population: {countryDetail.population}</h3>
+                </div>
             </div>
-            </div> : <p>Cargando</p>}
+            <div className="cd-div-activities">
+                <h3>ACTIVITIES: </h3>
+                <div>
+                {
+                    countryDetail.activities && countryDetail.activities.map(a => {
+                        return <h3>Name: {a.name}, Difficulty: {a.difficulty}, Duration: {a.duration}, Season: {a.season}</h3>
+                    })
+                }
+                </div>
+            </div>
+            </div> : <p className="loader">Cargando...</p>}
         </div>
     )
 }

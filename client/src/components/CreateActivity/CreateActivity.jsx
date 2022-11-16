@@ -109,7 +109,7 @@ const CreateActivity = function(){
     return(
         <form onSubmit={(e) => createActivity(e)} className="ca-form" >
             <div className="ca-div">
-                <h2 className="ca-h2">Create activity: </h2>
+                <h2 className="ca-h2">CREATE ACTIVITY</h2>
                 <label>Name: </label>
                 <input className="ca-input" name="name" type="text" value={state.name} onChange={handleChange} />
                 {errors.name && (<p className="errors">{errors.name}</p>)}
@@ -170,7 +170,7 @@ const CreateActivity = function(){
                 }
                 </div>
                 {errors.countryID && (<p className="errors">{errors.countryID}</p>)}
-                <button className="ca-bt-submit" type="submit">Create activity</button>
+                <button className="ca-bt-submit" type="submit">CREATE ACTIVITY</button>
             </div>
         </form>
     )   

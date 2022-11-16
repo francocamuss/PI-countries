@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700");
 .s-color{
     color: white;
     font-family: sans-serif;
@@ -5,9 +6,11 @@
 
 .s-div{
     border-style: solid;
-    border-color: white;
     border-radius: 10px;
-    background: rgba(207, 162, 27, 0.73);
+    border-color: black;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 7px 29px 0px;
+    font-family: "Poppins";
     width: 20%;
     margin-left: 10px;
     height: 510px;
@@ -32,6 +35,9 @@
     padding-bottom: 5px;
     border-color: black;
     color: black;
+    font-weight: bold;
+    font-family: "Poppins";
+    background-color: #DDAD43;
 }
 
 .s-bt{
@@ -44,12 +50,14 @@
     cursor: pointer;
     width: 80%;
     margin-left: 10%;
+    font-weight: bold;
 }
 
 .s-bt:hover{
     color: black;
-    background-color: whitesmoke;
+    background-color: #DDAD43;
     border-color: black;
+    font-weight: bold;
 }
 
 .s-label{
